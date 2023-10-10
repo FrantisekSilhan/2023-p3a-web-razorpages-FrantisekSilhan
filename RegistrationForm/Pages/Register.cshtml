@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "{email?}"
 @using RegistrationForm.Models;
 @model RegistrationForm.Pages.RegisterModel
 @{
@@ -11,46 +11,46 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="FirstName" class="control-label"></label>
-                <input asp-for="FirstName" class="form-control" />
-                <span asp-validation-for="FirstName" class="text-danger"></span>
+                <label asp-for="@Model.RegisterIM.FirstName" class="control-label"></label>
+                <input asp-for="@Model.RegisterIM.FirstName" class="form-control" />
+                <span asp-validation-for="@Model.RegisterIM.FirstName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="LastName" class="control-label"></label>
-                <input asp-for="LastName" class="form-control" />
-                <span asp-validation-for="LastName" class="text-danger"></span>
+                <label asp-for="@Model.RegisterIM.LastName" class="control-label"></label>
+                <input asp-for="@Model.RegisterIM.LastName" class="form-control" />
+                <span asp-validation-for="@Model.RegisterIM.LastName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="BirthDate" class="control-label"></label>
-                <input asp-for="BirthDate" class="form-control" />
-                <span asp-validation-for="BirthDate" class="text-danger"></span>
+                <label asp-for="@Model.RegisterIM.BirthDate" class="control-label"></label>
+                <input asp-for="@Model.RegisterIM.BirthDate" class="form-control" />
+                <span asp-validation-for="@Model.RegisterIM.BirthDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="SchoolName" class="control-label"></label>
-                <input asp-for="SchoolName" class="form-control" />
-                <span asp-validation-for="SchoolName" class="text-danger"></span>
+                <label asp-for="@Model.RegisterIM.SchoolName" class="control-label"></label>
+                <input asp-for="@Model.RegisterIM.SchoolName" class="form-control" />
+                <span asp-validation-for="@Model.RegisterIM.SchoolName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label class="control-label" asp-for="Grade">Ročník</label>
-                <select class="form-control" asp-for="Grade">
+                <label class="control-label" asp-for="@Model.RegisterIM.Grade">Ročník</label>
+                <select class="form-control" asp-for="@Model.RegisterIM.Grade" asp-items="Html.GetEnumSelectList<RegistrationForm.Models.SchoolGrade>()">
                 </select>
-                <span asp-validation-for="Grade" class="text-danger"></span>
+                <span asp-validation-for="@Model.RegisterIM.Grade" class="text-danger"></span>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Aspirant" /> @Html.DisplayNameFor(model => model.Aspirant)
+                    <input class="form-check-input" asp-for="@Model.RegisterIM.Aspirant" /> @Html.DisplayNameFor(model => model.RegisterIM.Aspirant)
                 </label>
-                <span asp-validation-for="Aspirant" class="text-danger"></span>
+                <span asp-validation-for="@Model.RegisterIM.Aspirant" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
+                <label asp-for="@Model.RegisterIM.Email" class="control-label"></label>
+                <input asp-for="@Model.RegisterIM.Email" class="form-control" />
+                <span asp-validation-for="@Model.RegisterIM.Email" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
+                <label asp-for="@Model.RegisterIM.Password" class="control-label"></label>
+                <input asp-for="@Model.RegisterIM.Password" class="form-control" />
+                <span asp-validation-for="@Model.RegisterIM.Password" class="text-danger"></span>
             </div>
             <div class="form-group mt-2">
                 <input type="submit" value="Vytvořit" class="btn btn-primary" /> <a asp-page="Index" class="btn btn-secondary">Zpět na seznam</a>

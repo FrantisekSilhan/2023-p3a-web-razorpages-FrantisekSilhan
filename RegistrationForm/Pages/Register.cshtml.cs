@@ -6,13 +6,24 @@ namespace RegistrationForm.Pages
 {
     public class RegisterModel : PageModel
     {
-        public void OnGet()
+        [BindProperty]
+        public RegisterIM RegisterIM { get; set; } = new RegisterIM();
+        public void OnGet(string email)
         {
-
+            RegisterIM.Email = email;
         }
 
         public IActionResult OnPost()
         {
+            if (ModelState.IsValid)
+            {
+                return RedirectToPage("/RegistrationResult", new
+                {
+                    firstName = RegisterIM.FirstName,
+                    email = RegisterIM.Email
+                });
+            }
+
             return Page();
         }
     }
