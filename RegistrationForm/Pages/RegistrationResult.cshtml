@@ -1,0 +1,17 @@
+﻿@page
+@model RegistrationForm.Pages.RegistrationResultModel
+@{
+}
+@if(Model.Success == true)
+{
+    <h1>Vítejte, uživateli @Model.Firstname</h1>
+    <div class="alert alert-success">Vaše registrace byla úspěšná.</div>
+    <p>Na Vámi uvedenou adresu <b>@Model.Email</b> byl zaslán informační e-mail.</p>
+    <div>
+        <a class="btn btn-primary">Na titulní stranu</a>
+    </div>
+}
+else
+{
+    <div class="alert alert-danger">Registrace se nepodařila.</div>
+}

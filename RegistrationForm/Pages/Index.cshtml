@@ -1,0 +1,21 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div>
+    <h1 class="display-4">Vítejte</h1>
+    <p>Odkazy k vyzkoušení</p>
+    <ul>
+        <li><a href="/Register">Registrace</a></li>
+        <li><a href="/Register?email=franta@vomacka.cz">Registrace s emailem</a></li>
+        <li><a href="/Register/franta@vomacka.cz">Registrace s hezkým emailem</a></li>
+        <li><a href="/RegistrationResult">Potvrzení registrace</a></li>
+        <li><a href="/RegistrationResult?email=franta@vomacka.cz&firstname=Franta">Potvrzení registrace s parametry</a></li>
+    </ul>
+    <p>Odkaz s helpery</p>
+    <ul>
+
+    </ul>
+</div>
