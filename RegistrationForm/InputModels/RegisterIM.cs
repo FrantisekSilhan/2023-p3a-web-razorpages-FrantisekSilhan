@@ -7,7 +7,7 @@ namespace RegistrationForm.InputModels
     {
         [Display(Name = "Jméno")]
         [Required(ErrorMessage = "Jméno musí být zadáno.")]
-        public string FirstName {  get; set; }
+        public string FirstName { get; set; }
         [Display(Name = "Příjmení")]
         [Required(ErrorMessage = "Příjmení musí být zadáno.")]
         public string LastName { get; set; }
@@ -25,7 +25,11 @@ namespace RegistrationForm.InputModels
         [EmailAddress]
         public string Email { get; set; }
         [Display(Name = "Heslo")]
+        [DataType(DataType.Password)]
+        [MinLength(8, ErrorMessage = "Heslo musí být minimálně 8 znaků.")]
         [Required(ErrorMessage = "Heslo musí být zadáno.")]
         public string Password { get; set; }
+        [Display(Name = "Den")]
+        public string Day { get; set; }
     }
 }
