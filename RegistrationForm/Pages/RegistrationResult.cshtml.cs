@@ -1,7 +1,5 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using RegistrationForm.InputModels;
+using System.ComponentModel.DataAnnotations;
 
 namespace RegistrationForm.Pages
 {
@@ -10,7 +8,7 @@ namespace RegistrationForm.Pages
         public string Firstname { get; set; } = String.Empty;
         public string Email { get; set; } = String.Empty;
         public bool Success { get; set; }
-        public void OnGet(string firstname, string email)
+        public void OnGet(string firstname, [EmailAddress] string email)
         {
             Firstname = firstname;
             Email = email;
