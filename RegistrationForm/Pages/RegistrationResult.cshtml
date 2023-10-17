@@ -2,6 +2,10 @@
 @model RegistrationForm.Pages.RegistrationResultModel
 @{
 }
+@if (Model.RegisterResult?.Length > 0)
+{
+    <p class="alert alert-info">@Model.RegisterResult</p>
+}
 @if(Model.Success == true)
 {
     <h1>Vítejte, uživateli @Model.Firstname</h1>
