@@ -1,4 +1,6 @@
-﻿using RegistrationForm.Models;
+﻿using Microsoft.AspNetCore.Mvc;
+
+using RegistrationForm.Models;
 using System.ComponentModel.DataAnnotations;
 
 namespace RegistrationForm.InputModels
@@ -12,6 +14,7 @@ namespace RegistrationForm.InputModels
         [Required(ErrorMessage = "Příjmení musí být zadáno.")]
         public string LastName { get; set; }
         [Display(Name = "Datum narození")]
+        [HiddenInput]
         public DateTime BirthDate { get; set; }
         [Display(Name = "Název školy")]
         public string SchoolName { get; set; }
